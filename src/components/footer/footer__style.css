@@ -4,6 +4,10 @@
   background-color: rgb(252, 248, 248);
   color: var(--black);
   margin-top: 100px;
+  z-index: 1;
+
+  bottom: 0;
+  width: 100%;
 }
 
 .footer__wrapper {

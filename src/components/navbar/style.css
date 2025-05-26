@@ -1,10 +1,9 @@
-/* Navigation*/
-
 .nav {
   background-color: rgb(252, 248, 248);
   color: var(--header-text);
   padding: 20px 0;
   border-bottom: 1px solid rgb(231, 231, 231);
+  z-index: 1;
 }
 
 .nav-row {
@@ -33,25 +32,66 @@
 
 .nav-list__link {
   color: var(--header-text);
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .nav-list__link:hover {
+  border-radius: 10px;
   opacity: 1;
+  box-shadow: 0 3px 2px rgba(0, 0, 0, 0.2);
 }
+
 .nav-list__link--active {
   position: relative;
 }
+
 .nav-list__link--active::before {
   content: "";
-
   position: absolute;
   left: 0;
   top: 100%;
-
   display: block;
   margin-top: 5px;
   width: 100%;
   height: 2px;
   background-color: var(--accent);
+}
+
+.user-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 8px 0;
+}
+
+.nav-dropdown__link,
+.nav-dropdown__logout {
+  display: block;
+  padding: 8px 20px;
+  text-decoration: none;
+  color: #333;
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+}
+
+.nav-dropdown__link:hover,
+.nav-dropdown__logout:hover {
+  background: #f5f5f5;
+}
+
+.nav-list__link--login {
+  color: #ff4757 !important;
 }

@@ -1,10 +1,10 @@
 /* Наполнение*/
-main {
+.main__creater {
   padding: 0 1rem;
   display: flex;
   flex-direction: column;
   max-width: 800px;
-  margin: 0 auto; /* центрирование */
+  margin: 0 auto;
   gap: 3rem;
 } /* Обертка формы и блока */
 form,
@@ -20,7 +20,7 @@ section form {
   width: 100%;
   max-width: 800px;
 }
-/* Основная информация - grid layout */
+/* Основная информация */
 .main-info-form {
   grid-template-columns: 1fr 2fr;
   gap: 2rem;
@@ -304,26 +304,21 @@ summary {
   background-color: var(--white);
 }
 
-/*При нажатии*/
-
 .checkbox-btn input[type="checkbox"]:checked + span {
   background: var(--accent);
   color: var(--white);
 }
 
-/* При нажатии переход */
 .checkbox-btn:hover {
   color: #666;
 }
-
-/* кнопка далее */
 
 .btn-submit {
   align-self: flex-end;
   background-color: var(--accent);
   color: var(--white);
   border: none;
-  border-radius: 0.375rem;
+  border-radius: 20px;
   padding: 0.5rem 1.5rem;
   font-size: 0.875rem;
   font-weight: 600;
@@ -334,7 +329,6 @@ summary {
   display: inline-block;
   background-color: var(--accent);
   padding: 12px 28px;
-  border-radius: 10px;
   color: var(--white);
   font-size: 18px;
   transition: background-color 0.3s ease;
@@ -345,10 +339,52 @@ summary {
   top: 1px;
 }
 .btn-submit:hover {
-  background-color: var(--accent);
+  background-color: var(--red);
+  box-shadow: 0 5px 10px gray, -5px -10px 20px pink;
+}
+.template-selection__title2 {
+  font-size: 40px;
+  margin-top: 30px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.template-selection {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+.resume-ready {
+  text-align: center;
+  padding: 100px 20px;
 }
 
-/* Для мобильности */
+.resume-ready h2 {
+  font-size: 28px;
+  margin-bottom: 40px;
+}
+
+.resume-ready__actions button {
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 12px 24px;
+  margin: 0 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.resume-ready__actions button:hover {
+  background-color: var(--red);
+  box-shadow: 0 5px 10px gray, -5px -10px 20px pink;
+  transform: translateY(-2px);
+}
+
 @media (max-width: 768px) {
   .main-info-form {
     grid-template-columns: 1fr;

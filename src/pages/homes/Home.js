@@ -1,7 +1,8 @@
 import Header from "../../components/header/Header";
-import image_1 from "./../img/steps/image1.png";
-import image_2 from "./../img/steps/image2.png";
-import image_3 from "./../img/steps/image 3.png";
+import image_1 from "./../../img/steps/image1.png";
+import image_2 from "./../../img/steps/image2.png";
+import image_3 from "./../../img/steps/image 3.png";
+import "./Home.css";
 
 const Home = () => {
   return (

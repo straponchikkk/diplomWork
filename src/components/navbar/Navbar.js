@@ -1,39 +1,36 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
+import "./style.css";
+
+const links = [
+  { to: "/", end: true },
+  { to: "/create", label: "Составить резюме" },
+  { to: "/templates", label: "Шаблоны" },
+  { to: "/about", label: "О сайте" },
+  { to: "/authh", label: "Войти" },
+];
 
 const Navbar = () => {
-  const [activeLink, setActiveLink] = useState("/");
-
-  const links = [
-    { to: "/creater", label: "Составить резюме" },
-    { to: "/templatess", label: "Шаблоны" },
-    { to: "/about", label: "О сайте" },
-    { to: "/auth", label: "Войти" },
-  ];
-
-  const handleClick = (to) => {
-    setActiveLink(to);
-  };
-
   return (
     <nav className="nav">
       <div className="container">
         <div className="nav-row">
-          <Link to="/" className="logo" onClick={() => handleClick("/")}>
+          <Link to="/" className="logo">
             GO WORK
           </Link>
+
           <ul className="nav-list">
-            {links.map((link) => (
-              <li key={link.to} className="nav-list__item">
-                <Link
-                  to={link.to}
-                  className={`nav-list__link ${
-                    activeLink === link.to ? "nav-list__link--active" : ""
-                  }`}
-                  onClick={() => handleClick(link.to)}
+            {links.map(({ to, label, end }) => (
+              <li key={to} className="nav-list__item">
+                <NavLink
+                  to={to}
+                  end={end}
+                  className={({ isActive }) =>
+                    "nav-list__link" +
+                    (isActive ? " nav-list__link--active" : "")
+                  }
                 >
-                  {link.label}
-                </Link>
+                  {label}
+                </NavLink>
               </li>
             ))}
           </ul>

@@ -1,30 +1,39 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
 import "./styles/main.css";
-
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
-
 import Home from "./pages/homes/Home";
 import Creater from "./pages/creater/Creater";
-import Templates from "./pages/templatess/Templates";
-import About_site from "./pages/about/About_site";
+import AboutSite from "./pages/about/AboutSite";
+import Auth from "./pages/authh/Auth";
+import "./pages/homes/Home.css";
+import "./components/navbar/style.css";
+import "./components/footer/footer__style.css";
+import TemplateSelection from "./pages/templatess/TemplateSelection";
+import { AuthProvider } from "./context/AuthContext";
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/creater" element={<Creater />} />
-          <Route path="/templates" element={<Templates />} />
-          <Route path="/about" element={<About_site />} />
-        </Routes>
-        <Footer />
-      </div>
-    </Router>
+    <AuthProvider>
+      <Router>
+        <div className="App">
+          <Navbar />
+
+          <main>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/templates" element={<TemplateSelection />} />
+              <Route path="/create" element={<Creater />} />
+              <Route path="/about" element={<AboutSite />} />
+              <Route path="/authh" element={<Auth />} />
+              <Route path="*" element={<h2>Страница не найдена</h2>} />
+            </Routes>
+          </main>
+
+          <Footer />
+        </div>
+      </Router>
+    </AuthProvider>
   );
 }
 
