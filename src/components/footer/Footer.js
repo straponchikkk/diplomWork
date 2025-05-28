@@ -10,25 +10,25 @@ const Footer = () => {
         <div className="footer__wrapper">
           <ul className="social">
             <li className="social__item">
-              <a href="#!">
+              <a href="https://vk.com/club230654541">
                 <img src={vk} alt="link" />
               </a>
             </li>
 
             <li className="social__item">
-              <a href="#!">
+              <a href="https://png2jpg.com/">
                 <img src={internet__png} alt="link" />
               </a>
             </li>
 
             <li className="social__item">
-              <a href="#!">
+              <a href="https://github.com/straponchikkk/diplomWork.git">
                 <img src={github} alt="link" />
               </a>
             </li>
 
             <li className="social__item">
-              <a href="#!">
+              <a href="https://forms.gle/SckG8C3HHA5rZVRR9">
                 <img src={telegram} alt="link" />
               </a>
             </li>
